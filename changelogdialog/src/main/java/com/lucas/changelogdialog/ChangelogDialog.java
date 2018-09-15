@@ -14,7 +14,7 @@ public class ChangelogDialog extends DialogFragment {
     private AlertDialog.Builder mBuilder;
     private Context mContext;
     private ReleaseHistory mReleaseHistory;
-    private String mPositiveBtnText = getString(R.string.btn_dismiss);
+    private String mPositiveBtnText = "Close";
 
     @Override
     public void onAttach(Context context) {
