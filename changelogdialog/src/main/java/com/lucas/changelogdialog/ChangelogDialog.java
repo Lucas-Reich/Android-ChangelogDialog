@@ -6,6 +6,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ListView;
 
@@ -13,6 +14,7 @@ public class ChangelogDialog extends DialogFragment {
     private AlertDialog.Builder mBuilder;
     private Context mContext;
     private ReleaseHistory mReleaseHistory;
+    private String mPositiveBtnText = getString(R.string.btn_dismiss);
 
     @Override
     public void onAttach(Context context) {
@@ -35,7 +37,7 @@ public class ChangelogDialog extends DialogFragment {
 
         mBuilder.setView(view);
 
-        mBuilder.setPositiveButton(R.string.btn_dismiss, new DialogInterface.OnClickListener() {
+        mBuilder.setPositiveButton(mPositiveBtnText, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -44,6 +46,11 @@ public class ChangelogDialog extends DialogFragment {
         });
 
         return mBuilder.create();
+    }
+
+    public void setCloseBtnText(@NonNull String btnText) {
+
+        mPositiveBtnText = btnText;
     }
 
     /**
@@ -56,7 +63,7 @@ public class ChangelogDialog extends DialogFragment {
         mBuilder.setTitle(title);
     }
 
-    public void setReleaseHistory2(ReleaseHistory releaseHistory) {
+    public void setReleaseHistory(ReleaseHistory releaseHistory) {
         mReleaseHistory = releaseHistory;
     }
 

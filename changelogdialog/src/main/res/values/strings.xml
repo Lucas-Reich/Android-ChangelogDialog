@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">ChangelogDialog</string>
-    <string name="btn_dismiss">Dismiss</string>
+    <string name="btn_dismiss">Close</string>
 </resources>
